@@ -1,42 +1,21 @@
-import styled from "styled-components";
-import { useContext } from "react";
-import { ProductContext } from "../hooks/product-context";
-import { useParams } from "react-router-dom";
-import { Form } from "../components/form";
-import { updateProduct } from "../api/update-product";
-import { useNavigate } from "react-router-dom";
-
-const Container = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  // alignItems: "center",
-  padding: "1em",
-});
-
-const Heading = styled.h1({
-  fontSize: "3em",
-});
-
-const Header = styled.header({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "0 1em",
-});
+import { useContext } from 'react';
+import { ProductContext } from '../hooks/product-context';
+import { useParams } from 'react-router-dom';
+import { Form } from '../components/form';
+import { updateProduct } from '../api/update-product';
+import { useNavigate } from 'react-router-dom';
+import { Header } from '../components/header';
+import { Container } from '../components/container';
 
 export const EditProduct = () => {
   const { products, setProducts } = useContext(ProductContext);
   const queryParams = useParams();
-
-  const { productId } = queryParams;
-
-  const product = products.find((product) => product.productId === productId);
-
   const nav = useNavigate();
 
-  const onSubmit = (updatedProduct) => {
-    console.log(updatedProduct);
+  const { productId } = queryParams;
+  const product = products.find((product) => product.productId === productId);
 
+  const onSubmit = (updatedProduct) => {
     updateProduct(updatedProduct);
 
     const newProducts = products.map((product) => {
@@ -48,15 +27,12 @@ export const EditProduct = () => {
     });
 
     setProducts(newProducts);
-
-    nav("/");
+    nav('/');
   };
 
   return (
     <Container>
-      <Header>
-        <Heading>Edit Product</Heading>
-      </Header>
+      <Header title="Edit Product" />
       {product && <Form product={product} onSubmit={onSubmit} />}
     </Container>
   );
