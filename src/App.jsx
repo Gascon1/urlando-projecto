@@ -7,13 +7,20 @@ import { EditProduct } from './pages/edit-product';
 import { getProducts } from './api/get-products';
 import { AddProduct } from './pages/add-product';
 
+let isInitialized = false;
+
 function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    if (products.length > 0) {
+    console.log('hello');
+    if (isInitialized) {
+      console.log('not first time');
       return;
     }
+    console.log('first time');
+
+    isInitialized = true;
 
     const fetchProducts = async () => {
       const response = await getProducts();
@@ -22,7 +29,7 @@ function App() {
     };
 
     fetchProducts();
-  }, [products, setProducts]);
+  }, [setProducts]);
 
   return (
     <div className="App">

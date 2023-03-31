@@ -11,7 +11,7 @@ const getRandomNumber = () => Math.floor(Math.random() * 100_000);
 export const AddProduct = () => {
   const { setProducts } = useContext(ProductContext);
   const product = {
-    productId: getRandomNumber(),
+    productId: getRandomNumber().toString(),
     productName: '',
     productOwnerName: '',
     scrumMasterName: '',
@@ -25,7 +25,8 @@ export const AddProduct = () => {
   const onSubmit = async (product) => {
     const newProduct = await addProduct(product);
 
-    setProducts((products) => [...products, newProduct]);
+    // use newProduct instead of product once backend change is done
+    setProducts((products) => [...products, product]);
 
     nav('/');
   };
