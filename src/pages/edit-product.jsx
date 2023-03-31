@@ -17,8 +17,6 @@ export const EditProduct = () => {
     (product) => product.productId.toString() === productId
   );
 
-  console.log(product);
-
   const onSubmit = (updatedProduct) => {
     updateProduct(updatedProduct);
 

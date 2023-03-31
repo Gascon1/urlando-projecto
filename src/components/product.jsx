@@ -1,67 +1,67 @@
-import styled from "styled-components";
-import { Developer } from "./developer";
+import styled from 'styled-components';
+import { Developer } from './developer';
 
 const Container = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.5em",
-  flexWrap: "wrap",
-  borderRadius: "0.3em",
-  overflow: "hidden",
-  background: "#3c3c3e",
-  justifyContent: "space-between",
-  padding: "1em 0",
-  border: "1px solid #aeaeae",
-  minWidth: "300px",
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5em',
+  flexWrap: 'wrap',
+  borderRadius: '0.3em',
+  overflow: 'hidden',
+  background: '#3c3c3e',
+  justifyContent: 'space-between',
+  padding: '1em 0',
+  border: '1px solid #aeaeae',
+  minWidth: '300px',
 });
 
 const Develoepers = styled.div({
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "0.5em",
-  padding: "0 1em",
-  alignItems: "center",
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '0.5em',
+  padding: '0 1em',
+  alignItems: 'center',
 });
 
 const Item = styled.span({
-  padding: "0 1em",
+  padding: '0 1em',
 });
 
 const Header = styled.header({
-  display: "flex",
-  padding: "0 1em 1em",
-  textTransform: "capitalize",
-  borderBottom: "1px solid #aeaeae",
+  display: 'flex',
+  padding: '0 1em 1em',
+  textTransform: 'capitalize',
+  borderBottom: '1px solid #aeaeae',
 });
 
 const ButtonContainer = styled.div({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  gap: "1em",
-  padding: "0 1em",
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: '1em',
+  padding: '0 1em',
 });
 
 const Button = styled.button({
-  padding: "0.5em 1em",
-  borderRadius: "0.5em",
-  border: "1px solid #aeaeae",
-  background: "#3c3c3e",
-  color: "#fff",
-  cursor: "pointer",
-  flex: "1",
-  transition: "background 0.1s ease-in-out, color 0.1s ease-in-out",
-  "&:hover": {
-    background: "#fff",
-    color: "#3c3c3e",
+  padding: '0.5em 1em',
+  borderRadius: '0.5em',
+  border: '1px solid #aeaeae',
+  background: '#3c3c3e',
+  color: '#fff',
+  cursor: 'pointer',
+  flex: '1',
+  transition: 'background 0.1s ease-in-out, color 0.1s ease-in-out',
+  '&:hover': {
+    background: '#fff',
+    color: '#3c3c3e',
   },
 });
 
 const ProductInfo = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  gap: "0.5em",
-  padding: "0.5em 0",
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '0.5em',
+  padding: '0.5em 0',
 });
 
 export const Product = (props) => {
@@ -76,7 +76,7 @@ export const Product = (props) => {
     methodology,
   } = product;
 
-  const developerList = developers.map((developer, i) => (
+  const developerList = developers?.map((developer, i) => (
     <Developer key={`developer-${i}`} className="developer">
       {developer}
     </Developer>

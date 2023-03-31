@@ -36,8 +36,6 @@ const StyledLink = styled(Link)({
 export const Products = () => {
   const { products, setProducts } = useContext(ProductContext);
 
-  console.log(products);
-
   const nav = useNavigate();
 
   const onEditClick = (productId) => {
