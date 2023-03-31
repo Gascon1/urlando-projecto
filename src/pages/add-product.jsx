@@ -16,7 +16,7 @@ export const AddProduct = () => {
     productOwnerName: '',
     scrumMasterName: '',
     startDate: '',
-    developers: [],
+    developers: [''],
     methodology: '',
   };
 
