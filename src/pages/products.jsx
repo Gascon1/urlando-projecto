@@ -152,7 +152,7 @@ export const Products = () => {
               handleOnActiveClick('developers');
             }}
           >
-            Developer
+            Developers
           </StyledButton>
         </BtnContainer>
       </Flex>
