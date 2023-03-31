@@ -1,11 +1,11 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Products } from "./pages/products";
-import "./App.css";
-import { useState, useEffect } from "react";
-import { ProductContext } from "./hooks/product-context";
-import { EditProduct } from "./pages/edit-product";
-import { getProducts } from "./api/get-products";
-import { AddProduct } from "./pages/add-product";
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Products } from './pages/products';
+import './App.css';
+import { useState, useEffect } from 'react';
+import { ProductContext } from './hooks/product-context';
+import { EditProduct } from './pages/edit-product';
+import { getProducts } from './api/get-products';
+import { AddProduct } from './pages/add-product';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -13,8 +13,6 @@ function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await getProducts();
-
-      console.log(response);
 
       setProducts(response);
     };
