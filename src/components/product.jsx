@@ -15,7 +15,7 @@ const Container = styled.div({
   minWidth: '300px',
 });
 
-const Develoepers = styled.div({
+const Developers = styled.div({
   display: 'flex',
   flexWrap: 'wrap',
   gap: '0.5em',
@@ -91,9 +91,9 @@ export const Product = (props) => {
         <Item className="product-id">Product ID: {productId}</Item>
         <Item className="scrum-master">Scrum master: {scrumMasterName}</Item>
         <Item className="product-owner">Product Owner: {productOwnerName}</Item>
-        <Develoepers className="developers">
+        <Developers className="developers">
           Developers: {developerList}
-        </Develoepers>
+        </Developers>
         <Item className="start-date">Start date: {startDate}</Item>
         <Item className="methodology">Methodology: {methodology}</Item>
       </ProductInfo>
