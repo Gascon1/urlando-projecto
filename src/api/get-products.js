@@ -3,14 +3,9 @@ import axios from 'axios';
 export const getProducts = async () => {
   try {
     const res = await axios.get('http://localhost:3000/api/products');
+    const data = res.data;
 
-    if (res.ok) {
-      const data = await res.json();
-
-      return data;
-    } else {
-      throw new Error('Something went wrong');
-    }
+    return data;
   } catch (err) {
     console.error(err);
 

@@ -11,6 +11,10 @@ function App() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    if (products.length > 0) {
+      return;
+    }
+
     const fetchProducts = async () => {
       const response = await getProducts();
 
@@ -29,16 +33,11 @@ function App() {
             setProducts,
           }}
         >
-          {products && (
-            <Routes>
-              <Route exact path="/" element={<Products />} />
-              <Route exact path="/new-product" element={<AddProduct />} />
-              <Route
-                path="/edit-product/:productId"
-                element={<EditProduct />}
-              />
-            </Routes>
-          )}
+          <Routes>
+            <Route exact path="/" element={<Products />} />
+            <Route exact path="/new-product" element={<AddProduct />} />
+            <Route path="/edit-product/:productId" element={<EditProduct />} />
+          </Routes>
         </ProductContext.Provider>
       </BrowserRouter>
     </div>

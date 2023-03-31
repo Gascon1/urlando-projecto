@@ -36,6 +36,8 @@ const StyledLink = styled(Link)({
 export const Products = () => {
   const { products, setProducts } = useContext(ProductContext);
 
+  console.log(products);
+
   const nav = useNavigate();
 
   const onEditClick = (productId) => {
@@ -65,7 +67,9 @@ export const Products = () => {
     <Container>
       <Header title="Products" count={products.length} />
       <StyledLink to="/new-product">Add a new product</StyledLink>
-      {products && <ProductsContainer>{productList}</ProductsContainer>}
+      {products.length > 0 && (
+        <ProductsContainer>{productList}</ProductsContainer>
+      )}
     </Container>
   );
 };

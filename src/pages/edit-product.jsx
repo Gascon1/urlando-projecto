@@ -13,7 +13,11 @@ export const EditProduct = () => {
   const nav = useNavigate();
 
   const { productId } = queryParams;
-  const product = products.find((product) => product.productId === productId);
+  const product = products.find(
+    (product) => product.productId.toString() === productId
+  );
+
+  console.log(product);
 
   const onSubmit = (updatedProduct) => {
     updateProduct(updatedProduct);

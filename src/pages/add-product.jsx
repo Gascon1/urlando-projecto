@@ -25,9 +25,9 @@ export const AddProduct = () => {
   const onSubmit = (product) => {
     console.log(product);
 
-    addProduct(product);
-
     setProducts((products) => [...products, product]);
+
+    addProduct(product);
 
     nav('/');
   };
