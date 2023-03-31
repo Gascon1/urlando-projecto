@@ -22,7 +22,7 @@ function App() {
     };
 
     fetchProducts();
-  }, [setProducts]);
+  }, [products, setProducts]);
 
   return (
     <div className="App">

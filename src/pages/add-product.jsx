@@ -22,12 +22,10 @@ export const AddProduct = () => {
 
   const nav = useNavigate();
 
-  const onSubmit = (product) => {
-    console.log(product);
+  const onSubmit = async (product) => {
+    const newProduct = await addProduct(product);
 
-    setProducts((products) => [...products, product]);
-
-    addProduct(product);
+    setProducts((products) => [...products, newProduct]);
 
     nav('/');
   };
