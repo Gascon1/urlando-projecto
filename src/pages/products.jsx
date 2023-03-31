@@ -144,7 +144,7 @@ export const Products = () => {
               handleOnActiveClick('scrumMaster');
             }}
           >
-            Scrum Master
+            Scrum Masters
           </StyledButton>
           <StyledButton
             activeBtn={activeBtn === 'developers'}
