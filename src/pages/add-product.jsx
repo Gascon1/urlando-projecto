@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import { addProduct } from '../api/add-product';
 import { Form } from '../components/form';
 import { useNavigate } from 'react-router-dom';
